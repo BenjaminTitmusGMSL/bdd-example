@@ -1,13 +1,13 @@
 ﻿namespace Specs.Steps;
 
 [Binding]
-public sealed class CalculatorStepDefinitions
+public sealed class BddStepDefinitions
 {
     // For additional details on Reqnroll step definitions see https://go.reqnroll.net/doc-stepdef
 
     private readonly ScenarioContext _scenarioContext;
 
-    public CalculatorStepDefinitions(ScenarioContext scenarioContext)
+    public BddStepDefinitions(ScenarioContext scenarioContext)
     {
         _scenarioContext = scenarioContext;
     }

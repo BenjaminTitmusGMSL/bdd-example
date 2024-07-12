@@ -1,7 +1,7 @@
 *.received.*
 
-# Created by https://www.toptal.com/developers/gitignore/api/rider,dotnetcore
-# Edit at https://www.toptal.com/developers/gitignore?templates=rider,dotnetcore
+# Created by https://www.toptal.com/developers/gitignore/api/rider,dotnetcore,specflow
+# Edit at https://www.toptal.com/developers/gitignore?templates=rider,dotnetcore,specflow
 
 ### DotnetCore ###
 # .NET Core build folders
@@ -91,4 +91,9 @@ fabric.properties
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
 
-# End of https://www.toptal.com/developers/gitignore/api/rider,dotnetcore
+### SpecFlow ###
+# Feature Files
+*.feature.cs
+*.feature.xlsx.*
+
+# End of https://www.toptal.com/developers/gitignore/api/rider,dotnetcore,specflow
