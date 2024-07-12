@@ -7,11 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Protobuf Include="Protos\greet.proto" GrpcServices="Server"/>
-    </ItemGroup>
-
-    <ItemGroup>
-        <PackageReference Include="Grpc.AspNetCore" Version="2.57.0"/>
+      <ProjectReference Include="..\Api\Api.csproj" />
+      <ProjectReference Include="..\EmailSender\EmailSender.csproj" />
+      <ProjectReference Include="..\Logic\Logic.csproj" />
+      <ProjectReference Include="..\Persistence\Persistence.fsproj" />
     </ItemGroup>
 
 </Project>
