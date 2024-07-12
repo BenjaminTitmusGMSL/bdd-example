@@ -1,0 +1,16 @@
+﻿services:
+  FakeSmtpServer:
+    image: haravich/fake-smtp-server
+    ports:
+      - "1025:1025"
+      - "4001:1080"
+
+  BddExample:
+    image: ${DOCKER_REGISTRY-}service
+    build:
+      context: ..
+      dockerfile: src/Service/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "4000:8080"
