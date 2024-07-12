@@ -1,6 +1,17 @@
 ﻿{
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
+    "Container": {
+      "commandName": "Docker",
+      "dotnetRunMessages": true,
+      "launchBrowser": false,
+      "dockerfileRunArguments": "--name VisualStudio.BddExample -p 4000:8080",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "publishAllPorts": true,
+      "useSSL": true
+    },
     "http": {
       "commandName": "Project",
       "dotnetRunMessages": true,

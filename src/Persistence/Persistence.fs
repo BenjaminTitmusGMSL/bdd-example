@@ -2,7 +2,7 @@
 
 open Logic.Interfaces
 
-type Persistence =
+type Persistence() =
     interface IPersistence with
         member this.ClearMessage() = failwith "todo"
         member this.SetMessage(message) = failwith "todo"

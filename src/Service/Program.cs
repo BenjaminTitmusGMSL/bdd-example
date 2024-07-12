@@ -1,5 +1,6 @@
 using Api;
 using Logic.Interfaces;
+using Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddGrpc();
 builder.Services.AddSingleton<IEmailSender, EmailSender.EmailSender>();
 builder.Services.AddSingleton<IPersistence, Persistence.Persistence>();
 builder.Services.AddSingleton<ILogic, Logic.Logic>();
+builder.Services.AddHostedService<PeriodicClear>();
 
 var app = builder.Build();
 
