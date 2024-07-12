@@ -5,6 +5,16 @@
       - "1025:1025"
       - "4001:1080"
 
+  Postgresql:
+    image: ${DOCKER_REGISTRY-}db
+    build:
+      context: .
+      dockerfile: Db.Dockerfile
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    ports:
+      - "5432:5432"
+
   BddExample:
     image: ${DOCKER_REGISTRY-}service
     build:

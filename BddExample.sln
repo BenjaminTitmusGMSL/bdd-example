@@ -21,6 +21,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{3DFFC707-48CF-472E-90A2-BB6195A165A7}"
 	ProjectSection(SolutionItems) = preProject
 		tests\docker-compose.yml = tests\docker-compose.yml
+		tests\Db.Dockerfile = tests\Db.Dockerfile
 	EndProjectSection
 EndProject
 Global
