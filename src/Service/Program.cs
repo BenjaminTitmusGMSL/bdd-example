@@ -1,9 +1,13 @@
 using Api;
+using Logic.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddGrpc();
+builder.Services.AddSingleton<IEmailSender, EmailSender.EmailSender>();
+builder.Services.AddSingleton<IPersistence, Persistence.Persistence>();
+builder.Services.AddSingleton<ILogic, Logic.Logic>();
 
 var app = builder.Build();
 

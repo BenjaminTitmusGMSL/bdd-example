@@ -4,18 +4,12 @@ option csharp_namespace = "Service";
 
 package bdd;
 
-// The greeting service definition.
+import "google/protobuf/empty.proto";
+
 service Bdd {
-  // Sends a greeting
-  rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc UpdateMessage (UpdateMessageRequest) returns (google.protobuf.Empty);
 }
 
-// The request message containing the user's name.
-message HelloRequest {
-  string name = 1;
-}
-
-// The response message containing the greetings.
-message HelloReply {
+message UpdateMessageRequest {
   string message = 1;
 }

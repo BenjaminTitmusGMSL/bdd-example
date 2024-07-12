@@ -1,15 +1,15 @@
+using Google.Protobuf.WellKnownTypes;
 using Grpc.Core;
+using Logic.Interfaces;
 using Service;
 
 namespace Api;
 
-public class BddService : Bdd.BddBase
+public class BddService(ILogic logic) : Bdd.BddBase
 {
-    public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+    public override async Task<Empty> UpdateMessage(UpdateMessageRequest request, ServerCallContext context)
     {
-        return Task.FromResult(new HelloReply
-        {
-            Message = "Hello " + request.Name
-        });
+        await logic.UpdateMessage(request.Message);
+        return new Empty {};
     }
 }
