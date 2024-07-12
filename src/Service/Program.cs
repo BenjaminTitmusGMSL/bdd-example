@@ -4,16 +4,19 @@ using Service.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+builder.Configuration.AddEnvironmentVariables("BddExample_");
+
+var smtpServerHost = builder.Configuration.GetValue<string>("SmtpServer:Host");
+var smtpServerPort = builder.Configuration.GetValue<int>("SmtpServer:Port");
+
 builder.Services.AddGrpc();
-builder.Services.AddSingleton<IEmailSender, EmailSender.EmailSender>();
+builder.Services.AddSingleton<IEmailSender>(_ => new EmailSender.EmailSender(smtpServerHost, smtpServerPort));
 builder.Services.AddSingleton<IPersistence, Persistence.Persistence>();
 builder.Services.AddSingleton<ILogic, Logic.Logic>();
 builder.Services.AddHostedService<PeriodicClear>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 app.MapGrpcService<BddService>();
 app.MapGet("/",
     () =>
