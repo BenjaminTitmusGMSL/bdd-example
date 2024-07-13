@@ -5,7 +5,7 @@ BEGIN;
 
 CREATE TABLE bddexample.messages (
   id SERIAL PRIMARY KEY,
-  message TEXT
+  message TEXT NOT NULL
 );
 
 COMMIT;
