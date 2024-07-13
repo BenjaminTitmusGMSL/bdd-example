@@ -13,4 +13,9 @@
       <ProjectReference Include="..\Logic\Logic.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="SqlFun.NpgSql" Version="2.4.0" />
+      <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    </ItemGroup>
+
 </Project>

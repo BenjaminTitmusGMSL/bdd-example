@@ -8,10 +8,11 @@ builder.Configuration.AddEnvironmentVariables("BddExample_");
 
 var smtpServerHost = builder.Configuration.GetValue<string>("SmtpServer:Host");
 var smtpServerPort = builder.Configuration.GetValue<int>("SmtpServer:Port");
+var connectionString = builder.Configuration.GetConnectionString("database");
 
 builder.Services.AddGrpc();
 builder.Services.AddSingleton<IEmailSender>(_ => new EmailSender.EmailSender(smtpServerHost, smtpServerPort));
-builder.Services.AddSingleton<IPersistence, Persistence.Persistence>();
+builder.Services.AddSingleton<IPersistence>(_ => new Persistence.Persistence(connectionString));
 builder.Services.AddSingleton<ILogic, Logic.Logic>();
 builder.Services.AddHostedService<PeriodicClear>();
 

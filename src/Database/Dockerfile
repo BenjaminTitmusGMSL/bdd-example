@@ -3,7 +3,7 @@ RUN apt --yes update \
     && apt --yes install sqitch
 
 FROM base AS build
-COPY ["src/Database", "database"]
+COPY ["src/Database", "/database"]
 COPY ["src/Database/init_db.sh", "/docker-entrypoint-initdb.d/init_db.sh"]
 ENV POSTGRES_HOST_AUTH_METHOD=trust
 RUN nohup bash -c "docker-entrypoint.sh postgres &" \
