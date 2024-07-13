@@ -1,1 +1,0 @@
-FROM galien0xffffff/postgres-debugger:15

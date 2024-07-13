@@ -8,8 +8,8 @@
   Postgresql:
     image: ${DOCKER_REGISTRY-}db
     build:
-      context: .
-      dockerfile: Db.Dockerfile
+      context: ..
+      dockerfile: src/Database/Dockerfile
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
