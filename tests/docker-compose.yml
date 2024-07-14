@@ -12,6 +12,7 @@
       dockerfile: src/Database/Dockerfile
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
+      - PGUSER=postgres
     ports:
       - "5432:5432"
     healthcheck:
